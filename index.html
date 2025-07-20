@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTIFOLIO</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="particulas"></div>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+            <li>
+                <a href="#contatos" class="menu-link">Contatos</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+        <img src="./img/pato.jpg" alt="foto minha" class="foto-perfil">
+        <h1>douglas rodrigues</h1>
+        <p class="cabecalho-sub-titulo">estudante de tecnologia</p>
+    </main>
+
+    <section id="sobre" class="Sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Olá! Meu nome é Douglas e estou atualmente cursando Ciência da Computação. Estou em busca de uma
+                oportunidade de estágio na área de TI, onde eu possa aplicar os conhecimentos adquiridos ao longo do
+                curso e, ao mesmo tempo, desenvolver novas habilidades práticas. Tenho grande interesse por
+                desenvolvimento de software, redes e segurança da informação, e estou disposto(a) a aprender e
+                contribuir com dedicação e comprometimento. Acredito que um estágio será fundamental para meu
+                crescimento profissional e estou animado(a) para fazer parte de uma equipe que me ajude a evoluir nessa
+                jornada.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulos"> Meus projetos</h2>
+        <div class="projetos-caixas">
+
+            <div class="projetos-card">
+                <img src="./img/pj1.jpg" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">projeto 1</h3>
+                    <p class="paragrafos-projetos">paragrafo do projeto 1 para editar depois</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/pj2.webp" alt="Projeto 2" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">projeto 2</h3>
+                    <p class="paragrafos-projetos">paragrafo do projeto 2 para editar depois</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="./img/pj3.jpg" alt="Projeto 3" class="projetos-imagem">
+                <div class="caixa-textos-projeto">
+                    <h3 class="info-projetos">projeto 3</h3>
+                    <p class="paragrafos-projetos">paragrafo do projeto 3 para editar depois</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulos">Entre em contato</h2>
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input class="campo-form" placeholder="Nome" id="nome">
+            </div>
+
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="4" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar Whatsapp</button>
+        </form>
+
+    </section>
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault()
+
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5511946291802'
+
+            const texto = 'Olá me chamo ${nome}, ${mensagem}'
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = 'https://wa.me/${telefone}?text=${msgFormatada}'
+            window.open(url, '_blank')
+        }
+
+    </script>
+</body>
+
+</html>
